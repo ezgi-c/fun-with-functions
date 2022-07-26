@@ -94,7 +94,7 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   let sum1 = sum(sumArr[0],sumArr[1])[0];
   let sum2 = sum(sum1,sumArr[2])[0];
-  let string =  sumArr[0] + ',' + sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + sum2 + ' is their sum.';
+  let string = sumArr + ' was passed in as an array of numbers, and ' + sum2 + ' is their sum.';
   let result = [sum2, string];
   console.log(result);
   return result;
@@ -129,7 +129,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   let product1 = multiply(multArr[0],multArr[1])[0];
   let product2 = multiply(product1,multArr[2])[0];
-  let string = 'The numbers ' + multArr[0] + ',' + multArr[1] + ',' + multArr[2] + ' have a product of ' + product2 + '.';
+  let string = 'The numbers ' + multArr + ' have a product of ' + product2 + '.';
   let result = [product2, string];
   console.log(result);
   return result;
@@ -146,11 +146,18 @@ testMultiplyArray(testArray);
 
 /////////////////////////////////////
 /* STRETCH GOAL: Problem 6
-Write a function called multiplyAnyArray() that takes an array of numbers of any length as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and concatenates a message using the arguments that were passed into the function:
+Write a function called multiplyAnyArray() that takes an array of numbers of any 
+length as its argument and returns an array whose first element is the product
+ of those numbers, and the second element is a string that EXACTLY follows this
+  example and concatenates a message using the arguments that were passed into the
+   function:
 
 "The numbers 1,2,3,4,5 have a product of 120."
 
-IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. 
+To do multiplication, use your multiply() function that you've already created. 
+You're going to have to be resourceful to figure out how to do this. 
+However, you may continue to use the + operator for string concatenation.
 
 This function should be dynamic, accepting an array of any length.
 
@@ -160,10 +167,18 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  let product = 1;
+  for (let i=0; i<dynamicArray.length; i++){
+    product = multiply(product, dynamicArray[i])[0];
+  }
+  let string = 'The numbers ' + dynamicArray + ' have a product of ' + product + '.';
+  let result = [product, string];
 
+  console.log(result);
+  return result;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
