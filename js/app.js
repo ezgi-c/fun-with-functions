@@ -10,7 +10,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
   let twoSum = a + b;
-  let string = 'The sum of ' + a + ' and ' + b + ' is ' + twoSum + '.';
+  let string = `The sum of ${a} and ${b} is ${twoSum}.`;
   let result = [twoSum, string];
   console.log(result);
   return result;
@@ -32,7 +32,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   let product = a * b;
-  let string = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+  let string = `The product of ${a} and ${b} is ${product}.`;
   let array = [product, string];
   console.log(array);
   return array;
@@ -60,7 +60,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   let element1 = sum(sum1,c)[0];
   let product1 = multiply(a,b)[0];
   let element2 = multiply(product1,c)[0];
-  let element3 = a + ' and ' + b + ' and ' + c + ' sum to ' + element1+'.';
+  let element3 = `${a} and ${b} and ${c} sum to ${element1}.`;
   let element4 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + element2+'.';
   let array = [element1, element2, element3, element4];
   console.log(array);
@@ -94,7 +94,7 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
   let sum1 = sum(sumArr[0],sumArr[1])[0];
   let sum2 = sum(sum1,sumArr[2])[0];
-  let string = sumArr + ' was passed in as an array of numbers, and ' + sum2 + ' is their sum.';
+  let string = `${sumArr} was passed in as an array of numbers, and ${sum2} is their sum.`;
   let result = [sum2, string];
   console.log(result);
   return result;
@@ -129,7 +129,7 @@ Test this function by hand in the console to get it working, and when you think 
 function multiplyArray(multArr) { //eslint-disable-line
   let product1 = multiply(multArr[0],multArr[1])[0];
   let product2 = multiply(product1,multArr[2])[0];
-  let string = 'The numbers ' + multArr + ' have a product of ' + product2 + '.';
+  let string = `The numbers ${multArr} have a product of ${product2}.`;
   let result = [product2, string];
   console.log(result);
   return result;
@@ -171,7 +171,7 @@ function multiplyAnyArray(dynamicArray) { //eslint-disable-line
   for (let i=0; i<dynamicArray.length; i++){
     product = multiply(product, dynamicArray[i])[0];
   }
-  let string = 'The numbers ' + dynamicArray + ' have a product of ' + product + '.';
+  let string = `The numbers ${dynamicArray} have a product of ${product}.`;
   let result = [product, string];
 
   console.log(result);
